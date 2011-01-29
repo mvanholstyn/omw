@@ -1,4 +1,14 @@
-$.template("connection", '<li data-key="${key}">${name}</li>');
+// $.template("connection", '<li data-key="${key}">${name}<span href="#connections" class="delete">Delete</span></li>');
+
+$.template("connection", '    \
+  <li data-key="${key}">      \
+  	<h3><a href="#">${name}</a></h3>   \
+  	<p>${message}</p>         \
+  	<p>Campfire: ${room}</p>  \
+  	<a href="#edit" class="edit" data-icon="gear">Edit</a>   \
+  </li>                       \
+');                           
+
 $.template("img", '<img src="${src}" />');
 $.template("option", '<option value="${value}">${text}</option>');
 
@@ -11,7 +21,7 @@ var renderConnections = function() {
 	});
 	$("#connection-list").listview('refresh');
 
-  $("[data-key]").click(function() {
+  $("#connection-list li h3 a").click(function() {
     connections.get($(this).attr("data-key"), function(connection) {
       navigator.geolocation.getCurrentPosition(function(position) {
         $.getJSON(
@@ -22,6 +32,17 @@ var renderConnections = function() {
           }
         );
       });
+    });
+  });
+
+  $("#connection-list li .edit").click(function() {
+    connections.get($(this).parents("li").attr("data-key"), function(connection) {
+      $("#edit #name").val(connection.name);
+      $("#edit #message").val(connection.message);
+      $("#edit #location").val(connection.location);
+      $("#edit #subdomain").val(connection.subdomain);
+      $("#edit #username").val(connection.username);
+      $("#edit #password").val(connection.password);
     });
   });
 };
