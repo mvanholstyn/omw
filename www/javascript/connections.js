@@ -84,15 +84,16 @@ $(function() {
     if($("#subdomain").val() && $("#username").val() && $("#password").val()) {
       $.getJSON(
         "http://pure-rain-331.heroku.com?jsonp=?",
-        { u: "https://" + $("#username").val() + ":" + $("#password").val() + "@" + $("#subdomain").val() + ".campfirenow.com/users/me.json" },
+        { u: "https://" + encodeURIComponent($("#username").val())+ ":" + encodeURIComponent($("#password").val()) + "@" + $("#subdomain").val() + ".campfirenow.com/users/me.json" },
         function(data) {
           $("#token").val(data.user.api_auth_token);
 
           getCampfireRooms($("#subdomain").val(), $("#token").val(), function(rooms) {
+            $("#room").empty();
             $.each(rooms, function(index, room) {
               $.tmpl("option", { value: room.id, text: room.name }).appendTo("#room");
-              $("#room").selectmenu('refresh');
             });
+            $("#room").selectmenu('refresh', true);
           });
         }
       );
