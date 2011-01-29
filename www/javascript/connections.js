@@ -10,6 +10,20 @@ var renderConnections = function() {
 		$.tmpl("connection", connection).appendTo("#connection-list");
 	});
 	$("#connection-list").listview('refresh');
+
+  $("[data-key]").click(function() {
+    connections.get($(this).attr("data-key"), function(connection) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        $.getJSON(
+          "http://www.mapquestapi.com/directions/v1/route?key=Fmjtd%7Cluu72gu2ll%2Cb5%3Do5-5yts0&callback=?",
+          { from: position.coords.latitude + "," + position.coords.longitude, to: connection.lat + "," + connection.lng },
+          function(data) {
+            sendToCampfire(connection.subdomain, connection.token, connection.room, connection.message.replace("{min}", Math.round(data.route.time / 60)));
+          }
+        );
+      });
+    });
+  });
 };
 
 var getLatLngMap = function(callback) {
@@ -58,21 +72,6 @@ $(function() {
       });
   	  renderConnections();
 	  });
-  });
-
-  $("[data-key]").click(function() {
-    alert("clicked");
-    connections.get($(this).attr("data-key"), function(connection) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        $.getJSON(
-          "http://www.mapquestapi.com/directions/v1/route?key=Fmjtd%7Cluu72gu2ll%2Cb5%3Do5-5yts0&callback=?",
-          { from: position.coords.latitude + "," + position.coords.longitude, to: connection.lat + "," + connection.lng },
-          function(data) {
-            sendToCampfire(connection.subdomain, connection.token, connection.room, connection.message.replace("{min}", Math.round(data.route.time / 60)));
-          }
-        );
-      });
-    });
   });
 
   $("#location").live("change", function() {
