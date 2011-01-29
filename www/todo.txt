@@ -1,0 +1,8 @@
+* edit
+* delete
+* feedback - indicator
+
+* pull location from contacts
+* sms
+
+* android - http://wiki.phonegap.com/w/page/16494774/Getting-started-with-Android-PhoneGap-in-Eclipse
