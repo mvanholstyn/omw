@@ -1,13 +1,17 @@
-package com.onmywaynow;
 
-import com.phonegap.*;
-import android.os.Bundle;
+    package com.OnMyWayNow;
 
-public class OnMyWayNow extends DroidGap {
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        super.loadUrl("file:///android_asset/www/index.html");
+    import android.app.Activity;
+    import android.os.Bundle;
+    import com.phonegap.*;
+
+    public class OnMyWayNow extends DroidGap
+    {
+        @Override
+        public void onCreate(Bundle savedInstanceState)
+        {
+            super.onCreate(savedInstanceState);
+            super.loadUrl("file:///android_asset/www/index.html");
+        }
     }
-}
+    
