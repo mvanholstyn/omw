@@ -1,0 +1,127 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="utf-8" /> 
+	<title>On My Way</title> 
+	<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.0a2.min.css" /> 
+	<script type="text/javascript" src="javascript/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="jquerymobile/jquery.mobile-1.0a2.min.js"></script>
+	<script type="text/javascript" src="javascript/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="lawnchair/Lawnchair.js"></script>
+	<script type="text/javascript" src="lawnchair/adaptors/LawnchairAdaptorHelpers.js"></script>
+	<script type="text/javascript" src="lawnchair/adaptors/DOMStorageAdaptor.js"></script>
+	<script type="text/javascript" src="javascript/connections.js"></script>
+</head> 
+<body> 
+	<div data-role="page" id="connections">
+		<div data-role="header">
+			<h1>On My Way</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" data-inset="true" id="connection-list"></ul>
+			<a href="#add" data-role="button">Add Connection</a>
+		</div>
+	</div>
+	
+	<div data-role="page" id="add">
+		<div data-role="header">
+			<h1>Add Connection</h1>
+		</div>
+		<div data-role="content">
+			<div data-role="fieldcontain">
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name" value="" />
+			</div>	
+			<div data-role="fieldcontain">
+				<label for="message">Message</label>
+				<textarea type="text" name="message" id="message">omw, be there in about {min} minutes.</textarea>
+			</div>
+			<div data-role="fieldcontain">
+				<label for="location">Location</label>
+				<input type="text" name="location" id="location" value="" />
+			</div>
+      <!-- <div data-role="fieldcontain">
+        <label for="service">Service</label>
+        <select name="service" id="service">
+          <option value="campfire">Campfire</option>
+          <option value="sms">Text Message (SMS)</option>
+          <option value="email">Email</option>
+          <option value="twitter">Twitter</option>
+        </select>
+      </div> -->
+			<fieldset id="campfire">
+			  <h2>Campfire</h2>
+  			<div data-role="fieldcontain">
+  				<label for="subdomain">Subdomain</label>
+  				<input type="text" name="subdomain" id="subdomain" value="" />
+  			</div>
+  			<div data-role="fieldcontain">
+  				<label for="username">Username</label>
+  				<input type="text" name="username" id="username" value="" />
+  			</div>
+  			<div data-role="fieldcontain">
+  				<label for="password">Password</label>
+  				<input type="password" name="password" id="password" value="" />
+  			</div>
+  			<input type="hidden" name="token" id="token" value="" />
+  			<div data-role="fieldcontain">
+  				<label for="room">Room</label>
+  				<select name="room" id="room"></select>
+  			</div>
+			</fieldset>
+			<a href="#connections" data-role="button" id="add-connection">Submit</a>
+		</div>
+	</div>
+	
+	<div data-role="page" id="edit">
+		<div data-role="header">
+			<h1>Edit Connection</h1>
+		</div>
+		<div data-role="content">
+			<div data-role="fieldcontain">
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name" value="" />
+			</div>	
+			<div data-role="fieldcontain">
+				<label for="message">Message</label>
+				<textarea type="text" name="message" id="message">omw, be there in about {min} minutes.</textarea>
+			</div>
+			<div data-role="fieldcontain">
+				<label for="location">Location</label>
+				<input type="text" name="location" id="location" value="" />
+			</div>
+      <!-- <div data-role="fieldcontain">
+        <label for="service">Service</label>
+        <select name="service" id="service">
+          <option value="campfire">Campfire</option>
+          <option value="sms">Text Message (SMS)</option>
+          <option value="email">Email</option>
+          <option value="twitter">Twitter</option>
+        </select>
+      </div> -->
+			<fieldset id="campfire">
+			  <h2>Campfire</h2>
+  			<div data-role="fieldcontain">
+  				<label for="subdomain">Subdomain</label>
+  				<input type="text" name="subdomain" id="subdomain" value="" />
+  			</div>
+  			<div data-role="fieldcontain">
+  				<label for="username">Username</label>
+  				<input type="text" name="username" id="username" value="" />
+  			</div>
+  			<div data-role="fieldcontain">
+  				<label for="password">Password</label>
+  				<input type="password" name="password" id="password" value="" />
+  			</div>
+  			<input type="hidden" name="token" id="token" value="" />
+  			<div data-role="fieldcontain">
+  				<label for="room">Room</label>
+  				<select name="room" id="room"></select>
+  			</div>
+			</fieldset>
+			<a href="#connections" data-role="button" id="add-connection">Submit</a>
+		</div>
+	</div>
+
+</body>
+</html>
