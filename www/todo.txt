@@ -6,3 +6,4 @@
 * sms
 
 * android - http://wiki.phonegap.com/w/page/16494774/Getting-started-with-Android-PhoneGap-in-Eclipse
+* palm - http://wiki.phonegap.com/w/page/27867015/simpleGetStartedWithPalm
