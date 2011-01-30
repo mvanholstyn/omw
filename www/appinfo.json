@@ -1,0 +1,9 @@
+{
+	"id": "com.mutuallyhuman.omw",
+	"version": "0.0.1",
+	"vendor": "Mutually Human Software",
+	"type": "web",
+	"main": "index.html",
+	"title": "On My Way",
+	"icon": "icon.png"
+}
