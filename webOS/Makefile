@@ -16,7 +16,7 @@ OPEN = open
 ECHO = echo
 ECHO_N = echo -n
 JAVA = java
-
+APPDIR = ../www
 all :: js copy_js package deploy run
 
 custom :: js copy_js package deploy
@@ -28,16 +28,19 @@ clean_libs:
 	
 package:
 	cp framework/www/index.html framework/www/app/views/First/First-scene.html
-	palm-package framework/www/
+	palm-package $(APPDIR)
 
 deploy:
-	palm-install com.palm.phonegap_1.0.0_all.ipk
+	palm-install com.*.ipk
 	
 run:
-	palm-launch com.palm.phonegap
+	palm-launch com.mutuallyhuman.omw
 	
 copy_js:
 	cp lib/phonegap.js framework/www/phonegap.js
+	
+logs:
+	palm-log -f com.mutuallyhuman.omw
 	
 js: lib/phonegap.js
 
