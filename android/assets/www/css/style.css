@@ -1,0 +1,17 @@
+.ui-mobile-viewport {
+	background: #f0f0f0; background-image: -moz-linear-gradient(top, #fff, #f0f0f0); background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #f0f0f0));   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f0f0f0')";  
+}
+
+.ui-body-c {
+	background: url(../images/critter.png) center center no-repeat; 
+	background-attachment: fixed;
+}
+
+input.ui-input-text, textarea.ui-input-text {
+	background: #fff;
+}
+
+label.ui-input-text {
+	font-weight: bold;
+	text-shadow: 1px 1px 0 #fff;  
+}

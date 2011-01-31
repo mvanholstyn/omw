@@ -1,5 +1,4 @@
-
-    package com.OnMyWayNow;
+package com.OnMyWayNow;
 
     import android.app.Activity;
     import android.os.Bundle;
