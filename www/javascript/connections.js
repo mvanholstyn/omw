@@ -5,7 +5,7 @@ $.template("connection", '    \
   	<h3><a href="#">${name}</a></h3>   \
   	<p>${message}</p>         \
   	<p>Campfire: ${room}</p>  \
-  	<a href="#edit" class="edit" data-icon="gear">Edit</a>   \
+  	<a href="#edit" class="edit" data-rel="dialog" data-transition="pop" data-icon="gear">Edit</a>   \
   </li>                       \
 ');                           
 

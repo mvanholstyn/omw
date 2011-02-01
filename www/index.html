@@ -11,19 +11,19 @@
 	<script type="text/javascript" src="lawnchair/adaptors/LawnchairAdaptorHelpers.js"></script>
 	<script type="text/javascript" src="lawnchair/adaptors/DOMStorageAdaptor.js"></script>
 	<script type="text/javascript" src="javascript/connections.js"></script>
-</head> 
-<body> 
+</head>
+<body>
 	<div data-role="page" id="connections">
 		<div data-role="header">
-			<h1>On My Way</h1>
+			<h1>On My Way Now</h1>
 		</div>
 		<div data-role="content">
 			<ul data-role="listview" data-inset="true" id="connection-list"></ul>
-			<a href="#add" data-role="button">Add Connection</a>
+			<a href="#add" data-role="button" data-rel="dialog" data-icon="new" data-transition="pop">Add Connection</a>
 		</div>
 	</div>
 	
-	<div data-role="page" id="add">
+	<div data-role="dialog" id="add">
 		<div data-role="header">
 			<h1>Add Connection</h1>
 		</div>
@@ -69,11 +69,11 @@
   				<select name="room" id="room"></select>
   			</div>
 			</fieldset>
-			<a href="#connections" data-role="button" id="add-connection">Submit</a>
+			<a href="#connections" data-role="button" data-icon="check" id="add-connection">Save</a>
 		</div>
 	</div>
 	
-	<div data-role="page" id="edit">
+	<div data-role="dialog" id="edit">
 		<div data-role="header">
 			<h1>Edit Connection</h1>
 		</div>
@@ -119,7 +119,8 @@
   				<select name="room" id="room"></select>
   			</div>
 			</fieldset>
-			<a href="#connections" data-role="button" id="add-connection">Submit</a>
+			<a href="#connections" data-role="button" data-icon="check" id="save-connection">Save</a>
+			<a href="#connections" data-role="button" data-icon="delete" id="delete-connection">Delete</a>
 		</div>
 	</div>
 
